@@ -2,7 +2,8 @@
 // Use of this source code is governed by a MIT-style license that can be
 // found in the LICENSE file.
 
-import RNFetchBlob from '../index.js'
+import { NativeModules } from 'react-native';
+
 import fs from '../fs.js'
 import getUUID from '../utils/uuid'
 import Log from '../utils/log.js'
@@ -18,6 +19,7 @@ log.disable()
  * A RNFetchBlob style Blob polyfill class, this is a Blob which compatible to
  * Response object attain fron RNFetchBlob.fetch.
  */
+const RNFetchBlob = NativeModules.RNFetchBlob;
 export default class Blob extends EventTarget {
 
   cacheName:string;
